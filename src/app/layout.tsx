@@ -1,6 +1,7 @@
 import { Viewport } from "next";
 import { SessionProvider } from "next-auth/react";
 import "./globals.css";
+import "rsuite/dist/rsuite-no-reset.min.css";
 
 export const viewport: Viewport = {
   width: "device-width",
