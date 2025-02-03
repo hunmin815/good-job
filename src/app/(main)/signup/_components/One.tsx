@@ -1,10 +1,10 @@
 "use client";
 
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/20/solid";
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import { Input } from "rsuite";
 import { useStoreSignUp } from "./StoreProvider";
 
-export default function InputInfo({}: {}) {
+export default function One({}: {}) {
   const { setStep, inputInfo, setInputInfo } = useStoreSignUp();
 
   return (
@@ -20,19 +20,7 @@ export default function InputInfo({}: {}) {
           <p>다음</p> <ChevronRightIcon className="h-5 w-5" />
         </button>
       </div>
-      <section className="flex flex-col pl-2">
-        <p className="text-2xl font-semibold">아이디</p>
-        <div className="mt-2 px-4">
-          <Input
-            placeholder="아이디"
-            size="lg"
-            value={inputInfo.id}
-            onChange={(e) => {
-              setInputInfo({ ...inputInfo, id: e });
-            }}
-          />
-        </div>
-      </section>
+
       <section className="mt-4 flex flex-col pl-2">
         <p className="text-2xl font-semibold">이름을 알려주세요</p>
         <div className="mt-2 px-4">

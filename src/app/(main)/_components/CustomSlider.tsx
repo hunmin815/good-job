@@ -1,30 +1,32 @@
 "use client";
 
-import { useRef } from "react";
 import { Slider } from "rsuite";
 
-export default function CenterSlider({
+export default function CustomSlider({
   value,
   onChange,
+  max,
 }: {
   value: number;
   onChange: (value: number) => void;
+  max?: number;
 }) {
-  const offset = useRef(50).current;
-
   return (
     <Slider
       className="w-full"
-      value={value + offset}
+      step={10}
+      value={value}
+      graduated
+      progress
       onChange={(value) => {
-        const newValue = value - 50;
+        const newValue = value;
         onChange(newValue);
       }}
       renderTooltip={(value) => {
         if (!value) {
           return <span>0</span>;
         }
-        return <span>{value - 50}</span>;
+        return <span>{value}</span>;
       }}
     />
   );
