@@ -1,3 +1,11 @@
+export type InputInfo = {
+  id: string;
+  userName: string;
+  orgName: string;
+  importantElement: Elements;
+  pointElement: Elements;
+};
+
 /**
  * 요소
  * work: 업무

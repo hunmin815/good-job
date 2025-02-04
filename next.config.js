@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const { version } = require("./package.json");
 
+const hostDomain = process.env.HOST_DOMAIN || "localhost";
+
 const nextConfig = {
   swcMinify: true,
   productionBrowserSourceMaps: false,
@@ -29,7 +31,7 @@ const nextConfig = {
 
   experimental: {
     serverActions: {
-      allowedOrigins: ["localhost"],
+      allowedOrigins: [hostDomain],
     },
   },
 

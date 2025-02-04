@@ -15,6 +15,7 @@ export default function CustomSlider({
     <Slider
       className="w-full"
       step={10}
+      max={max || 100}
       value={value}
       graduated
       progress

@@ -2,25 +2,15 @@
 
 import { create } from "zustand";
 import { Elements } from "../../_lib/types";
+import { InputInfo } from "../../_lib/types";
 
 type UseStoreSignUp = {
   step: number;
   setStep: (step: number) => void;
 
-  inputInfo: {
-    id: string;
-    userName: string;
-    orgName: string;
-    importantElement: Elements;
-    pointElement: Elements;
-  };
-  setInputInfo: (inputInfo: {
-    id: string;
-    userName: string;
-    orgName: string;
-    importantElement: Elements;
-    pointElement: Elements;
-  }) => void;
+  inputInfo: InputInfo;
+
+  setInputInfo: (inputInfo: InputInfo) => void;
 };
 
 export const useStoreSignUp = create<UseStoreSignUp>((set) => ({

@@ -42,7 +42,7 @@ export default function Three() {
         },
       });
     },
-    [inputInfo.importantElement, setInputInfo, maxImportantPoint],
+    [inputInfo, maxImportantPoint, setInputInfo],
   );
 
   return (
