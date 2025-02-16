@@ -1,7 +1,6 @@
 import { Viewport } from "next";
-import { SessionProvider } from "next-auth/react";
-import "./globals.css";
 import "rsuite/dist/rsuite-no-reset.min.css";
+import "./globals.css";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -17,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body className="bg-gray-50">{children}</body>
     </html>
   );
 }

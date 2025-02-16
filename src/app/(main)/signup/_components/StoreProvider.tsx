@@ -9,7 +9,6 @@ type UseStoreSignUp = {
   setStep: (step: number) => void;
 
   inputInfo: InputInfo;
-
   setInputInfo: (inputInfo: InputInfo) => void;
 };
 

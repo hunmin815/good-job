@@ -3,10 +3,12 @@
 import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import CustomSlider from "../../_components/CustomSlider";
 import { useStoreSignUp } from "./StoreProvider";
-import { createUser } from "../_actions/Four";
+import { createUserJoin } from "../_actions/Four";
+import { useRouter } from "next/navigation";
 
 export default function Four() {
   const { inputInfo, setStep, setInputInfo } = useStoreSignUp();
+  const router = useRouter();
 
   return (
     <div>
@@ -20,9 +22,39 @@ export default function Four() {
         <button
           className="inline-flex items-center pr-2 font-semibold text-blue-500"
           onClick={async () => {
-            const result = await createUser(inputInfo);
+            const result = await createUserJoin(inputInfo);
 
-            console.log(result);
+            if (result === "fail") {
+              alert("회원가입이 실패하였습니다.");
+              return;
+            }
+
+            if (result === "success") {
+              alert("회원가입이 완료되었습니다.");
+              router.push("/login");
+              setInputInfo({
+                id: "",
+                userName: "",
+                orgName: "",
+                importantElement: {
+                  work: 0,
+                  reward: 0,
+                  grow: 0,
+                  environment: 0,
+                  relration: 0,
+                  value: 0,
+                },
+                pointElement: {
+                  work: 0,
+                  reward: 0,
+                  grow: 0,
+                  environment: 0,
+                  relration: 0,
+                  value: 0,
+                },
+              });
+              return;
+            }
           }}
         >
           <p>완료</p>

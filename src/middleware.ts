@@ -51,7 +51,6 @@ export default withAuth(
 /** 로그인 인증 제외 목록 */
 export const config = {
   matcher: [
-    // "/((?!adminMenu|api|_next/static|_next/image|favicon.ico|favicon_96.ico|favicon-stage.ico|favicon-dev.ico|favicon-local.ico|auth|authentication|signup|alert|error).*)", // 미들웨어 제외
-    "/((?!api|_next/static|_next/image|favicon.ico|favicon_96.ico|favicon-stage.ico|favicon-dev.ico|favicon-local.ico|auth|authentication|signup|alert|error).*)", // 미들웨어 제외
+    "/((?!api|_next/static|_next/image|favicon.ico|auth|authentication|signup|login|alert|error).*)", // 미들웨어 제외
   ],
 };
